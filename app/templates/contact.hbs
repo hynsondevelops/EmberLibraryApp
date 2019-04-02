@@ -1,0 +1,8 @@
+<h1>Contact Page</h1>
+{{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+{{input type="email" value=textMessage class="form-control" placeholder="Please type your text message." autofocus="autofocus"}}
+
+<button class="btn btn-primary btn-lg btn-block" {{action 'sendMessage'}} disabled={{isDisabled}}>Send Message</button>
+{{#if responseMessage}}
+  <div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
