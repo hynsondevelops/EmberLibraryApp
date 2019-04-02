@@ -15,11 +15,23 @@ export default Controller.extend({
 	actions: {
 
       sendMessage() {
+      	const email = this.get('emailAddress');
+      	const message = this.get('textMessage');
+
+      	const newContact = this.store.createRecord('contact', {email, message})
+      	newContact.save().then(response => {
+      		this.set('emailAddress', '')
+      		this.set('textMessage', '')
+      		this.set('responseMessage', 'We got your message and we’ll get in touch soon')
+      	});
+
+      	/*
         alert(`Email Address: ${this.get('emailAddress')}\nText Message: ${this.get('textMessage')}`);
         this.set('emailAddress', '')
         this.set('textMessage', '')
-        this.set('responseMessage', 'We got your message and we’ll get in touch soon')
+        this.set('responseMessage', 'We got your message and we’ll get in touch soon')*/
       }
     }
 
 });
+
