@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-       apiKey: "AIzaSyB8maswqnEFnt9xus5L5xmnXPyDdlu0Mi4",
+       apiKey: process.env.GOOGLE_API_KEY,
        authDomain: "emberlibraryapp-53508.firebaseapp.com",
        databaseURL: "https://emberlibraryapp-53508.firebaseio.com",
        projectId: "emberlibraryapp-53508",
